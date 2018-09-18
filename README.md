@@ -1,12 +1,6 @@
 # Frontend Boilerplate with React, MobX & TypeScript
 
-A bare minimum react-mobx-webpack-typescript boilerplate with TodoMVC example.
-
-Note that this project does not include **Server-Side Rendering**,  **Testing Frameworks** and other stuffs that makes the package unnecessarily complicated.
-
-Ideal for creating React apps from the scratch.
-
-See also: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
+Forked from: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
 
 ## Contains
 
@@ -17,7 +11,6 @@ See also: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react
 - [x] [Mobx React](https://github.com/mobxjs/mobx-react)
 - [x] [Mobx React Router](https://github.com/alisd23/mobx-react-router/)
 - [x] [Mobx React Devtools](https://github.com/mobxjs/mobx-react-devtools)
-- [x] [TodoMVC example](http://todomvc.com)
 
 ### Build tools
 

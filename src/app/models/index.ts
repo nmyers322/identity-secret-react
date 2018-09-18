@@ -1,3 +1,3 @@
-import TodoModel from './TodoModel';
+import GenericModel from './GenericModel';
 
-export { TodoModel };
+export { GenericModel };

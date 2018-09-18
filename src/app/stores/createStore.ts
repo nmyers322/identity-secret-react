@@ -1,14 +1,14 @@
 import { History } from 'history';
-import { TodoModel } from 'app/models';
-import { TodoStore } from './TodoStore';
+import { GenericModel } from 'app/models';
+import { GenericStore } from './GenericStore';
 import { RouterStore } from './RouterStore';
-import { STORE_TODO, STORE_ROUTER } from 'app/constants';
+import { STORE_GENERIC, STORE_ROUTER } from 'app/constants';
 
-export function createStores(history: History, defaultTodos?: TodoModel[]) {
-  const todoStore = new TodoStore(defaultTodos);
-  const routerStore = new RouterStore(history);
-  return {
-    [STORE_TODO]: todoStore,
-    [STORE_ROUTER]: routerStore
-  };
+export function createStores(history: History, defaultItems?: GenericModel[]) {
+      const genericStore = new GenericStore(defaultItems);
+      const routerStore = new RouterStore(history);
+      return {
+          [STORE_GENERIC]: genericStore,
+          [STORE_ROUTER]: routerStore
+      };
 }
