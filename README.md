@@ -1,16 +1,20 @@
-# Frontend Boilerplate with React, MobX & TypeScript
+# Frontend Boilerplate with Auth
+
+Includes Typescript, React, Mobx, Material UI, and Okta
 
 Forked from: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
 
 ## Contains
 
-- [x] [Typescript](https://www.typescriptlang.org/) 2.7
-- [x] [React](https://facebook.github.io/react/) 16
-- [x] [React Router](https://github.com/ReactTraining/react-router) 4.2
+- [x] [Typescript](https://www.typescriptlang.org/) 2.8.3
+- [x] [React](https://facebook.github.io/react/) 16.3
+- [x] [React Router](https://github.com/ReactTraining/react-router) 4.3
 - [x] [Mobx](https://github.com/mobxjs/mobx)
 - [x] [Mobx React](https://github.com/mobxjs/mobx-react)
 - [x] [Mobx React Router](https://github.com/alisd23/mobx-react-router/)
 - [x] [Mobx React Devtools](https://github.com/mobxjs/mobx-react-devtools)
+- [x] [Okta React](https://github.com/okta/okta-oidc-js/tree/master/packages/okta-react)
+- [x] [Material UI](https://github.com/mui-org/material-ui)
 
 ### Build tools
 

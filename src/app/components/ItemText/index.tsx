@@ -22,8 +22,7 @@ export class ItemText extends React.Component<ItemTextProps, ItemTextState> {
         const classes = classNames(
             {
                 [style.bold]: this.props.bold
-            },
-            style.normal
+            }
         );
 
         return (
