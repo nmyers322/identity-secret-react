@@ -4,6 +4,7 @@ import { Router, Route, Switch } from 'react-router';
 import { GenericContainer } from 'app/containers/GenericContainer';
 import { Security, ImplicitCallback } from '@okta/okta-react';
 import { CLIENT_ID, ORG_URL } from './constants';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Header from './containers/Header';
 
 const securityConfig = {
@@ -11,6 +12,17 @@ const securityConfig = {
   redirect_uri: window.location.origin + '/implicit/callback',
   client_id: CLIENT_ID
 };
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+        main: "#004d40"
+    },
+    secondary: {
+        main: "#f5f5f5"
+    }
+  },
+});
 
 export interface Auth {
   login(redirectUri: string): {};
@@ -33,16 +45,18 @@ const topSpacerStyles = {
 // render react DOM
 export const App = hot(module)(({ history }) => (
     <div className="App">
-        <Router history={history}>
-            <Security {...securityConfig}>
-                <Header />
-                <div className="TopSpacer" style={topSpacerStyles} />
-                <Switch>
-                    <Route path="/" exact={true} component={GenericContainer} />
-                    <Route path="/implicit/callback" component={ImplicitCallback} />
-                </Switch>
-            </Security>
-        </Router>
+        <MuiThemeProvider theme={theme}>
+            <Router history={history}>
+                <Security {...securityConfig}>
+                    <Header />
+                    <div className="TopSpacer" style={topSpacerStyles} />
+                    <Switch>
+                        <Route path="/" exact={true} component={GenericContainer} />
+                        <Route path="/implicit/callback" component={ImplicitCallback} />
+                    </Switch>
+                </Security>
+            </Router>
+        </MuiThemeProvider>
         { renderDevTool() }
     </div>
 ));
