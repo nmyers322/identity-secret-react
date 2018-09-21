@@ -1,3 +1,1 @@
-export const APP_TITLE = "App";
-export const CLIENT_ID = "";
-export const ORG_URL = "";
+export const APP_TITLE = "Identity Secret";

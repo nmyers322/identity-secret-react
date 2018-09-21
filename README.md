@@ -1,8 +1,8 @@
-# Frontend Boilerplate with Auth
+# Identity Secret React
 
-Includes Typescript, React, Mobx, Material UI, and Okta
+Identity Secret is an app that allows a user to manage an Identity with Attributes and allow Services to verify those Attributes without revealing the Identity.
 
-Forked from: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
+Forked from: [frontend-with-auth-boilerplate](https://github.com/nmyers322/frontend-with-auth-boilerplate)
 
 ## Contains
 
