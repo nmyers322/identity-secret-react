@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import { Router, Route, Switch } from 'react-router';
-import { GenericContainer } from 'app/containers/GenericContainer';
+import { IdsContainer } from 'app/containers/IdsContainer';
 import { Security, ImplicitCallback } from '@okta/okta-react';
 import { CLIENT_ID, ORG_URL } from './constants';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Header from './containers/Header';
+import BottomNav from './components/BottomNav';
 
 const securityConfig = {
   issuer: ORG_URL + '/oauth2/default',
@@ -51,9 +52,11 @@ export const App = hot(module)(({ history }) => (
                     <Header />
                     <div className="TopSpacer" style={topSpacerStyles} />
                     <Switch>
-                        <Route path="/" exact={true} component={GenericContainer} />
+                        <Route path="/" exact={true} component={IdsContainer} />
+                        <Route path="/ids" component={IdsContainer} />
                         <Route path="/implicit/callback" component={ImplicitCallback} />
                     </Switch>
+                    <BottomNav />
                 </Security>
             </Router>
         </MuiThemeProvider>

@@ -1,7 +1,7 @@
 import { observable, computed, action } from 'mobx';
 import { GenericModel } from 'app/models';
 
-export class GenericStore {
+export class IdStore {
     constructor(fixtures: GenericModel[]) {
         this.items = fixtures;
     }
@@ -19,4 +19,4 @@ export class GenericStore {
     }
 }
 
-export default GenericStore;
+export default IdStore;

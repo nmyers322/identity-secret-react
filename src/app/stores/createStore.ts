@@ -1,14 +1,14 @@
 import { History } from 'history';
 import { GenericModel } from 'app/models';
-import { GenericStore } from './GenericStore';
+import { IdStore } from './IdStore';
 import { RouterStore } from './RouterStore';
-import { STORE_GENERIC, STORE_ROUTER } from 'app/constants';
+import { STORE_ID, STORE_ROUTER } from 'app/constants';
 
 export function createStores(history: History, defaultItems?: GenericModel[]) {
-      const genericStore = new GenericStore(defaultItems);
+      const idStore = new IdStore(defaultItems);
       const routerStore = new RouterStore(history);
       return {
-          [STORE_GENERIC]: genericStore,
+          [STORE_ID]: idStore,
           [STORE_ROUTER]: routerStore
       };
 }
