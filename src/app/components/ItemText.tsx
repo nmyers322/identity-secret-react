@@ -1,6 +1,4 @@
 import * as React from 'react';
-import * as classNames from 'classnames';
-import * as style from './style.css';
 
 export interface ItemTextProps {
     bold?: boolean,
@@ -19,14 +17,9 @@ export class ItemText extends React.Component<ItemTextProps, ItemTextState> {
     }
 
     render() {
-        const classes = classNames(
-            {
-                [style.bold]: this.props.bold
-            }
-        );
 
         return (
-            <div className={classes}>
+            <div>
                 { this.props.text }
             </div>
         );

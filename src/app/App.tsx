@@ -2,16 +2,15 @@ import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import { Router, Route, Switch } from 'react-router';
 import { IdsContainer } from 'app/containers/IdsContainer';
-import { Security, ImplicitCallback } from '@okta/okta-react';
+import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
 import { CLIENT_ID, ORG_URL } from './constants';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import Header from './containers/Header';
 import BottomNav from './components/BottomNav';
 
 const securityConfig = {
-  issuer: ORG_URL + '/oauth2/default',
-  redirect_uri: window.location.origin + '/implicit/callback',
-  client_id: CLIENT_ID
+    issuer: ORG_URL + '/oauth2/default',
+    redirect_uri: window.location.origin + '/implicit/callback',
+    client_id: CLIENT_ID
 };
 
 const theme = createMuiTheme({
@@ -26,10 +25,10 @@ const theme = createMuiTheme({
 });
 
 export interface Auth {
-  login(redirectUri: string): {};
-  logout(redirectUri: string): {};
-  isAuthenticated(): boolean;
-  getAccessToken(): string;
+    login(redirectUri: string): {};
+    logout(redirectUri: string): {};
+    isAuthenticated(): boolean;
+    getAccessToken(): string;
 }
 
 const renderDevTool = () => {
@@ -39,21 +38,15 @@ const renderDevTool = () => {
     }
 };
 
-const topSpacerStyles = {
-    height: 64
-}
-
 // render react DOM
 export const App = hot(module)(({ history }) => (
     <div className="App">
         <MuiThemeProvider theme={theme}>
             <Router history={history}>
                 <Security {...securityConfig}>
-                    <Header />
-                    <div className="TopSpacer" style={topSpacerStyles} />
                     <Switch>
                         <Route path="/" exact={true} component={IdsContainer} />
-                        <Route path="/ids" component={IdsContainer} />
+                        <SecureRoute path="/ids" component={IdsContainer} />
                         <Route path="/implicit/callback" component={ImplicitCallback} />
                     </Switch>
                     <BottomNav />

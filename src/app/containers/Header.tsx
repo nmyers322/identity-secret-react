@@ -48,6 +48,9 @@ const styles = {
           marginLeft: -12,
           marginRight: 20,
       },
+      topSpacer: {
+          height: 64
+      }
   };
 
 export default withAuth(class Header extends React.Component<HeaderProps, HeaderState> {
@@ -108,6 +111,7 @@ export default withAuth(class Header extends React.Component<HeaderProps, Header
 
         return (
             <div style={styles.root}>
+                <div className="TopSpacer" style={styles.topSpacer} />
                 <Drawer
                     anchor={"left"}
                     open={drawerOpen}
