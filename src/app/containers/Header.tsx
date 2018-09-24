@@ -15,9 +15,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import {
-    APP_TITLE
-} from 'app/constants';
+import { APP_TITLE } from 'app/constants';
 import { Auth } from '../../App';
 
 export interface HeaderProps extends RouteComponentProps<any> {
@@ -139,13 +137,15 @@ export default withAuth(class Header extends React.Component<HeaderProps, Header
                 </Drawer>
                 <AppBar position="fixed">
                     <Toolbar>
-                        <IconButton 
-                            style={styles.menuButton} 
-                            color="inherit" 
-                            aria-label="Menu"
-                            onClick={this.toggleDrawer}>
-                            <MenuIcon />
-                        </IconButton>
+                        { authenticated && (
+                            <IconButton 
+                                style={styles.menuButton} 
+                                color="inherit" 
+                                aria-label="Menu"
+                                onClick={this.toggleDrawer}>
+                                <MenuIcon />
+                            </IconButton> 
+                        ) }
                         <Typography variant="title" color="inherit" style={styles.grow}>
                             { APP_TITLE }
                         </Typography>

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import { Router, Route, Switch } from 'react-router';
-import { IdsContainer } from 'app/containers/IdsContainer';
+import { Ids } from 'app/containers/Ids';
+import Welcome from 'app/components/Welcome';
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
 import { CLIENT_ID, ORG_URL } from './constants';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import BottomNav from './components/BottomNav';
 
 const securityConfig = {
     issuer: ORG_URL + '/oauth2/default',
@@ -22,6 +22,9 @@ const theme = createMuiTheme({
         main: "#f5f5f5"
     }
   },
+  typography: {
+      fontFamily: "Noto Serif KR"
+  }
 });
 
 export interface Auth {
@@ -45,11 +48,10 @@ export const App = hot(module)(({ history }) => (
             <Router history={history}>
                 <Security {...securityConfig}>
                     <Switch>
-                        <Route path="/" exact={true} component={IdsContainer} />
-                        <SecureRoute path="/ids" component={IdsContainer} />
+                        <Route path="/" exact={true} component={Welcome} />
+                        <SecureRoute path="/ids" component={Ids} />
                         <Route path="/implicit/callback" component={ImplicitCallback} />
                     </Switch>
-                    <BottomNav />
                 </Security>
             </Router>
         </MuiThemeProvider>
