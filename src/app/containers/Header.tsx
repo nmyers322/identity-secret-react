@@ -16,7 +16,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { APP_TITLE } from 'app/constants';
-import { Auth } from '../../App';
+import { Auth } from '../App';
 
 export interface HeaderProps extends RouteComponentProps<any> {
     auth: Auth,

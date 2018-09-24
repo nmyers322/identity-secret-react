@@ -1,21 +1,28 @@
-import { observable, computed, action } from 'mobx';
-import { GenericModel } from 'app/models';
+import { observable, action } from 'mobx';
+import { IdModel } from 'app/models/IdModel';
 
 export class IdStore {
-    constructor(fixtures: GenericModel[]) {
-        this.items = fixtures;
+    constructor(fixtures: IdModel[]) {
+        this.ids = fixtures;
     }
 
-    @observable public items: Array<GenericModel>;
+    @observable public ids: Array<IdModel>;
 
-    @computed
-    get itemTexts() : string[] {
-        return this.items.map((item) => item.text);
+    @action
+    addId = (id: string) : void => {
+        this.ids.push(new IdModel(id));
     }
 
     @action
-    updateText = (item: GenericModel, newText: string) : void => {
-        item.text = newText;
+    deleteId = (id: IdModel) : void => {
+        let newIds = [...this.ids];
+        newIds = newIds.filter((checkId: IdModel) => (checkId.id !== id.id));
+        this.ids = newIds;
+    }
+
+    @action
+    reloadIds = (ids: string[]) : void => {
+        this.ids = ids.map((id: string) => (new IdModel(id)));
     }
 }
 

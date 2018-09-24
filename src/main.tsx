@@ -3,17 +3,14 @@ import * as ReactDOM from 'react-dom';
 import { useStrict } from 'mobx';
 import { Provider } from 'mobx-react';
 import { createBrowserHistory } from 'history';
-import { GenericModel } from 'app/models';
 import { createStores } from 'app/stores';
 import { App } from 'app';
 
 // enable MobX strict mode
 useStrict(true);
 
-// default fixtures for TodoStore
+// default fixtures
 const defaultItems = [
-    new GenericModel('Text initializer'),
-    new GenericModel('More text')
 ];
 
 // prepare MobX stores

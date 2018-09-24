@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import { Router, Route, Switch } from 'react-router';
-import { Ids } from 'app/containers/Ids';
+import Ids from 'app/containers/Ids';
 import Welcome from 'app/components/Welcome';
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
 import { CLIENT_ID, ORG_URL } from './constants';
