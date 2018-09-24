@@ -15,7 +15,7 @@ import Button from '@material-ui/core/Button';
 
 export interface IdsProps extends RouteComponentProps<any> {
     /** MobX Stores will be injected via @inject() **/
-    // [STORE_GENERIC]: GenericStore;
+    // [STORE_ID]: IdsStore;
     auth: Auth
 }
 

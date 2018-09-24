@@ -2,6 +2,8 @@ import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import { Router, Route, Switch } from 'react-router';
 import Ids from 'app/containers/Ids';
+import Requests from 'app/containers/Requests';
+import Attributes from 'app/containers/Attributes';
 import Welcome from 'app/components/Welcome';
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
 import { CLIENT_ID, ORG_URL } from './constants';
@@ -50,6 +52,8 @@ export const App = hot(module)(({ history }) => (
                     <Switch>
                         <Route path="/" exact={true} component={Welcome} />
                         <SecureRoute path="/ids" component={Ids} />
+                        <SecureRoute path="/requests" component={Requests} />
+                        <SecureRoute path="/attributes" component={Attributes} />
                         <Route path="/implicit/callback" component={ImplicitCallback} />
                     </Switch>
                 </Security>
