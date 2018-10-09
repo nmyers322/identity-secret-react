@@ -47,7 +47,7 @@ export class BottomNav extends React.Component<BottomNavProps, BottomNavState> {
     handleChange = (event, value) => {
         const router = this.props[STORE_ROUTER] as RouterStore;
         this.setState({ value });
-        router.push(this.routes[value], );
+        router.push(this.routes[value]);
     }
 
     render() {

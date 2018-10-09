@@ -9,13 +9,10 @@ import { App } from 'app';
 // enable MobX strict mode
 useStrict(true);
 
-// default fixtures
-const defaultItems = [
-];
 
 // prepare MobX stores
 const history = createBrowserHistory();
-const rootStore = createStores(history, defaultItems);
+const rootStore = createStores(history);
 
 // render react DOM
 ReactDOM.render(

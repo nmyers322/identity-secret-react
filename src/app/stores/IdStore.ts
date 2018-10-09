@@ -2,8 +2,8 @@ import { observable, action } from 'mobx';
 import { IdModel } from 'app/models/IdModel';
 
 export class IdStore {
-    constructor(fixtures: IdModel[]) {
-        this.ids = fixtures;
+    constructor() {
+        this.ids = [];
     }
 
     @observable public ids: Array<IdModel>;
